@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Error {
     constructor(errorInfo) {
-        this.errorInfo = errorInfo;
+        this.result = errorInfo.result;
+        this.code = errorInfo.code;
+        this.name = errorInfo.name;
+        this.message = errorInfo.message;
     }
     static make(error) {
         return new Error({

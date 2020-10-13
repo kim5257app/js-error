@@ -6,10 +6,16 @@ export type ErrorInfo = {
 }
 
 export default class Error {
-  errorInfo: ErrorInfo;
+  public readonly result: string;
+  public readonly code: number;
+  public readonly name: string;
+  public readonly message: string;
 
   constructor(errorInfo: ErrorInfo) {
-    this.errorInfo = errorInfo;
+    this.result = errorInfo.result;
+    this.code = errorInfo.code;
+    this.name = errorInfo.name
+    this.message = errorInfo.message;
   }
 
   static make(error: any): Error {

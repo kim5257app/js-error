@@ -5,7 +5,10 @@ export declare type ErrorInfo = {
     message: string;
 };
 export default class Error {
-    errorInfo: ErrorInfo;
+    readonly result: string;
+    readonly code: number;
+    readonly name: string;
+    readonly message: string;
     constructor(errorInfo: ErrorInfo);
     static make(error: any): Error;
     static throwError(error: any): void;
