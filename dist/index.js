@@ -6,6 +6,9 @@ class Error {
         this.code = errorInfo.code;
         this.name = errorInfo.name;
         this.message = errorInfo.message;
+        this.prototype = {
+            toString: () => `[${this.result}](${this.code}) ${this.name}: ${this.message}`,
+        };
     }
     static make(error) {
         return new Error({
@@ -25,18 +28,18 @@ class Error {
     }
     static makeFail(name, message, code) {
         return new Error({
-            result: 'fail',
-            code: (code != null) ? (code) : (-1),
-            name: (name != null) ? (name) : ('ERROR'),
+            result: 'failed',
+            name,
             message: (message != null) ? (message) : ('ERROR'),
+            code: (code != null) ? (code) : (-1),
         });
     }
     static throwFail(name, message, code) {
         throw new Error({
-            result: 'fail',
-            code: (code != null) ? (code) : (-1),
-            name: (name != null) ? (name) : ('ERROR'),
+            result: 'failed',
+            name,
             message: (message != null) ? (message) : ('ERROR'),
+            code: (code != null) ? (code) : (-1),
         });
     }
 }

@@ -1,14 +1,17 @@
 export declare type ErrorInfo = {
-    result: string;
+    result: 'error' | 'failed';
     code: number;
     name: string;
     message: string;
 };
 export default class Error {
-    readonly result: string;
+    readonly result: 'error' | 'failed';
     readonly code: number;
     readonly name: string;
     readonly message: string;
+    readonly prototype: {
+        toString: () => string;
+    };
     constructor(errorInfo: ErrorInfo);
     static make(error: any): Error;
     static throwError(error: any): void;

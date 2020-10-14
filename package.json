@@ -1,6 +1,6 @@
 {
   "name": "@kim5257/js-error",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Error handling module",
   "main": "dist/index.js",
   "scripts": {
@@ -22,6 +22,8 @@
     "@types/debug": "^4.1.5",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
